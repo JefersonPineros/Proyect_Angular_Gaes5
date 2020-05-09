@@ -1,0 +1,14 @@
+.opcionesAdmin{
+    background-color: rgb(180, 180, 180);
+    padding: 1%;
+
+}
+.list-group  .actionb{
+    background-color: rgb(110, 110, 110) !important;
+    color: white;
+    transition: 0.4s;
+}
+.list-group .actionb:hover{
+    background-color: white !important ;
+    color: black;
+}

@@ -1,0 +1,19 @@
+nav {
+    align-items: center;
+    background: rgb(1,0,6);
+    background: linear-gradient(143deg, rgba(1,0,6,1) 28%, rgba(121,9,9,1) 51%, rgba(162,52,8,1) 80%);
+}
+.navbar-brand img{
+    width: 120px;
+    height: auto;
+}
+nav .nav-link{
+    color: white !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style: oblique;
+}
+nav .nav-item :hover{
+    background: rgb(1,0,6);
+    background: linear-gradient(143deg, rgba(1,0,6,1) 28%, rgba(171,61,22,1) 67%);
+}

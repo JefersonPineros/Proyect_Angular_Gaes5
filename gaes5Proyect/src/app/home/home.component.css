@@ -1,0 +1,32 @@
+aside {
+    background: url("../../assets/imagenes/fondoPrincipal.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 15px;
+}
+div .calendario{
+    width: 100%;
+    background-color: grey;
+    height: 580px;
+}
+div .eventos{
+    margin-top: 20px;
+}
+div .ubicacion{
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    
+}
+div .ubicacion img{
+    width: 100%;
+}
+div .bottomapa{
+    margin-top: 15px;
+    text-align: center;
+}
+.comoLlegar{
+    background-color: black;
+    color: white;
+}
