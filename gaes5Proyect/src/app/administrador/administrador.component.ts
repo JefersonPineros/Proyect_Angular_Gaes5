@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class AdministradorComponent implements OnInit {
   
   public rutasAdmin:String;
-  constructor() { }
+
+  constructor() {
+      
+   }
 
   ngOnInit(): void {
     
@@ -20,7 +23,8 @@ export class AdministradorComponent implements OnInit {
     
   }
   modulo(indice:String) {
-    this.rutasAdmin = indice
+    let indi:String = indice;
+    this.rutasAdmin = indi;
   }
 
 }

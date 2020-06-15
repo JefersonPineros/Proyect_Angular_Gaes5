@@ -1,0 +1,15 @@
+.contenedor1{
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url("../../assets/imagenes/404NotFound.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 500px;
+}
+.albumImg img{
+    width: 100%;
+}
+.listadoAl{
+    margin-top: 15px;
+}

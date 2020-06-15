@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./eliminar-usuario.component.css']
 })
 export class EliminarUsuarioComponent implements OnInit {
-
+  dtOptions: DataTables.Settings = {};
   constructor() { }
 
   ngOnInit(): void {

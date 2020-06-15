@@ -1,0 +1,56 @@
+.information{
+    /* margin-top: 15px; */
+    background-color: rgba(180, 179, 179, 0.85);
+    padding: 15px;
+    align-items: center;
+}
+.card{
+    height: 420px;
+    padding: 10px;  
+}
+.card img{
+    border-radius: 15px;
+}
+.infoProductos{
+    margin-top: 10px;
+}
+.filtroM{
+    margin-top: 10px;
+}
+.card-footer a{
+    margin-left: 10%;
+    font-size: 20px;
+    color: red;
+}
+.card-footer a:hover{
+    transition: 0.2s;
+    color:rgb(255, 72, 0);
+    font-size:22px;
+}
+.carritoCo{
+    color:rgb(65, 0, 0)
+}
+.carritoCo:hover{
+    transition: 0.5s;
+    color:rgb(177, 1, 1)
+}
+.productStyle{
+    background-image: url("../../assets/imagenes/fondoPrincipal.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.filtros button .fa-glass-martini{
+    color: orange;
+}
+/* .productStyle aside{
+    background-color: white; 
+} */
+.iniciar-sesion .rsP{
+    color: red;
+}
+.iniciar-sesion .rsP:hover{
+    transition: 0.2s;
+    color: rgb(192, 32, 3);
+}

@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./musica.component.css']
 })
 export class MusicaComponent implements OnInit {
-
-  constructor() { }
+  public visible:boolean;
+  constructor() { 
+    this.visible = false;
+  }
 
   ngOnInit(): void {
+  }
+  hideOrShow(){
+    if(this.visible){
+      this.visible = false
+    }else{
+      this.visible = true
+    }
   }
 
 }

@@ -1,101 +1,121 @@
-<aside class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="row information">
-                <div class="iniciar-sesion col-3">
-                    <button class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" type="button">iniciar-sesion</button>
-                </div>
-                <div class="buscador col-9 align-content-around">
-                    <div class="row">
-                        <div class="col">
-                            <input type="text" id="buscar" class="form-control col-12">
+<div class="productStyle">
+    <aside class="container ">
+        <div class="row">
+            <div class="col-12">
+                <div class="row information">
+                    <div class="iniciar-sesion col-3">
+                        <div class="row">
+                            <button class="btn btn-secondary" data-toggle="modal" data-target="#iniSesionProduct"
+                                type="button">iniciar-sesion</button>
                         </div>
-                        <div class="col">
-                            <label for="buscar"><button type="button"
-                                    class="btn btn-dark">Buscar productos</button></label>
+                        <div class="row">
+                            <a class="rsP" data-dismiss="modal" data-toggle="modal" data-target="#registroProducts">¿Aun no
+                                te has registrado?</a>
+                        </div>
+                    </div>
+                    <div class="buscador col-9 align-content-around">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-7">
+                                    <input type="text" placeholder="Buscar productos" id="buscar" class="form-control">
+                                </div>
+                                <div class="col-3">
+                                    <label for="buscar">
+                                        <button type="button" class="btn btn-dark">Buscar
+                                            productos
+                                        </button>
+                                    </label>
+                                </div>
+                                <div class="col-2 carritoCo">
+                                    <a type="button" data-toggle="modal" data-target="#exampleModal">Carrito<i
+                                            class="fas fa-2x fa-cart-plus"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-lg-3 col-md-12 filtroM">
+                <div class="list-group filtros">
+                    <button type="button" class="list-group-item list-group-item-action"><i class="fas fa-glass-martini"></i> Cerveza</button>
+                    <button type="button" class="list-group-item list-group-item-action"><i class="fas fa-glass-martini"></i> Aguardiente</button>
+                    <button type="button" class="list-group-item list-group-item-action"><i class="fas fa-glass-martini"></i> Aperitivos</button>
+                    <button type="button" class="list-group-item list-group-item-action"><i class="fas fa-glass-martini"></i> Whisky</button>
+                    <button type="button" class="list-group-item list-group-item-action"><i class="fas fa-glass-martini"></i> Cocteles</button>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-12 infoProductos">
+                <div class="row row-cols-1 row-cols-md-3">
+                    <div class="col mb-4" *ngFor="let product of listaProductos; let productPoint=index">
+                        <div class="card">
+                            <img src="{{product.imagen}}" class="card-img-top" alt="" style="max-height: 150px;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.nombrePro}}</h5>
+                                <p class="card-text">{{product.descripcionPro}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">${{product.valorProdu}}</small>
+                                <a type="button"><i class="fas fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </aside>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-carrito-compras></app-carrito-compras>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Enviar Pedido</button>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-3">
-            <div class="list-group filtros">
-                <button type="button" class="list-group-item list-group-item-action">Bebidas</button>
-                <button type="button" class="list-group-item list-group-item-action">Comidas</button>
-                <button type="button" class="list-group-item list-group-item-action">Aperitivos</button>
-                <button type="button" class="list-group-item list-group-item-action">Whiskys</button>
-                <button type="button" class="list-group-item list-group-item-action">Cocteles</button>
+</div>
+<div class="modal fade" id="iniSesionProduct" tabindex="-1" role="dialog" aria-labelledby="iniSesionProduct"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="iniSesionProduct">Ingreso de sesion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </div>
-        <div class="col-9">
-            <div class="card-deck cardStyle imgcard">
-                <div class="card">
-                    <img src="../src/poker.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Cerveza Poker</h5>
-                        <p>Cervesa para consumo personal y en compañia</p>
-                    </div>
-                    <div class="footer">
-                        <small class="text-muted">Valor: $2500</small>
-                    </div>    
-                </div>
-                <div class="card">
-                    <img src="../src/clubColombia.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Cervesa Club Colombia</h5>
-                        <p>Cervesa artesanal mas reconocida en el mercado</p>
-                    </div>
-                    <div class="footer">
-                        <small class="text-muted">Valor: $3000</small>
-                    </div>    
-                </div>
-                <div class="card">
-                    <img src="../src/aguardiente.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Aguardiente Antioqueño</h5>
-                        <p>Contenido 1000 ml, bebida alcoholica mas vendida - puede servise sola o acompañada de otros tragos </p>
-                    </div>
-                    <div class="footer">
-                        <small class="text-muted">Valor: $85000</small>
-                    </div>    
-                </div>
-                
-            </div>
-            <div class="card-deck cardStyle imgcard">
-                <div class="card">
-                    <img src="../src/coctel.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Coctel Margarita</h5>
-                        <p>se usan otros licores con sabor a naranja como el Grand Marnier u otras marcas de triple sec o Curaçao azul (que produce la margarita azul).</p>
-                    </div>
-                    <div class="footer">
-                        <small class="text-muted">Valor: $29000</small>
-                    </div>    
-                </div>
-                <div class="card">
-                    <img src="../src/Jack_Daniel.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Jack Daniels</h5>
-                        <p>Whisky Tennessee es filtrado en carbón de arce sacarino, dándole un sabor y aroma distintivos</p>
-                    </div>
-                    <div class="footer">
-                        <small class="text-muted">Valor: $250000 </small>
-                    </div>    
-                </div>
-                <div class="card">
-                    <img src="../src/Someting_Special.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Someting Special</h5>
-                        <p>Excelente opción con una inmejorable relación calidad-precio.  Compite con Grand Macnish, Famous Grouse y Cutty Sark.</p>
-                    </div>
-                    <div class="footer">
-                        <small class="text-muted">Valor: $290000</small>
-                    </div>    
-                </div>
-                
+            <div class="modal-body">
+                <app-ini-sesion-product></app-ini-sesion-product>
             </div>
         </div>
     </div>
-</aside>
+</div>
+<div class="modal fade" id="registroProducts" tabindex="-1" role="dialog" aria-labelledby="registroProducts"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registroProducts">Registro de Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-registro-pro></app-registro-pro>
+            </div>
+        </div>
+    </div>
+</div>

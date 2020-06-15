@@ -1,46 +1,71 @@
-<nav class="navbar navbar-expand-lg">
-
-    <!--  Show this only on mobile to medium screens  -->
-    <a class="navbar-brand d-lg-none" href="#">
-
+<nav class="navbar navbar-expand-lg ">
+    <a class="navbar-brand" href="#">
+        <img src="../../assets/imagenes/powerletter.png" width="120" height="80 " class="d-inline-block align-top"
+            loading="lazy" alt="">
     </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
-        aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-cogs"></i></span>
     </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto ">
+            <li class="nav-item">
+                <a class="nav-link active" routerLink="/home" routerLinkActive="active" href="#"><i
+                        class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/musica" routerLinkActive="active" href="#"><i class="fas fa-play"></i>
+                    Musica <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/productos" href="#"><i class="fas fa-beer"></i> Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/nosotros" routerLinkActive="active" href="#"><i
+                        class="fas fa-marker"></i> Nosotros</a>
+            </li>
+        </ul>
+        <div [ngSwitch]="tipoUsuario" *ngIf="ingreso" class="">
+            <div *ngSwitchCase="1">
+                <ul class="nav navbar-nav flex-row flex-wrap">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i class="far fa-user-circle fa-2x"></i>
+                            Administrador</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" routerLink="/admin" href="#">Menu</a>
+                            <a class="dropdown-item " type="button" (click)="clearSesion()">Cerrar
+                                sesion</a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- <div class="navbar-text mt-1 w-50 text-right order-1 order-md-last">
+                    <a class="nav-link" routerLink="/admin" href="#">Administrador</a>
+                    <a type="button" class="cerrarSesion" (click)="clearSesion()">Cerrar sesion</a>
+                </div> -->
+            </div>
+            <div *ngSwitchCase="2">
+                <ul class="nav navbar-nav flex-row flex-nowrap">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><i class="far fa-user-circle fa-2x"></i>
+                            {{usuario}}</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item " type="button" (click)="clearSesion()">Cerrar
+                                sesion</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div *ngSwitchCase="3">
+                <div class="navbar-text mt-1 w-50 text-right order-1 order-md-last">
+                    <a class="nav-link" routerLink="" href="#">Bartender</a>
+                    <span><a type="button" class="cerrarSesion" (click)="clearSesion()">cerrar Sesion</a></span>
+                </div>
+            </div>
+            <div *ngSwitchDefault>
 
-    <!--  Use flexbox utility classes to change how the child elements are justified  -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarToggle">
-
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active" routerLink="/home" routerLinkActive="active" href="#">Inicio <span
-                        class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" routerLink="/musica" routerLinkActive="active" href="#">Musica <span
-                        class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-        <!--   Show this only lg screens and up   -->
-        <a class="navbar-brand d-none d-lg-block" href="#">
-            <img src="../../assets/imagenes/Logopower2.png" alt="">
-        </a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" routerLink = "/productos" href="#">Productos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink = "/nosotros" routerLinkActive = "active" href="#">Nosotros</a>
-            </li>
-        </ul>
-    </div>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarToggle">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" routerLink = "/admin" href="#">Administrador</a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </nav>

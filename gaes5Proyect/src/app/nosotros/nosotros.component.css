@@ -1,0 +1,16 @@
+.mvpag{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.card-body{
+    text-align: justify;
+}
+.card-body h5{
+    text-align: center
+}
+.card-header{
+    font-weight: bold;
+}
+.quien{
+    margin-top: 10px;
+}

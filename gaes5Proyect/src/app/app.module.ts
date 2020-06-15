@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import {ConfirmEqualsValidatorDirective} from './Directivas/confirm-equals-validator.directive';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +25,10 @@ import { CrearAlbumComponent } from './subAdmin/Musica/crear-album/crear-album.c
 import { EliminarAlbumComponent } from './subAdmin/Musica/eliminar-album/eliminar-album.component';
 import { GestorEventosComponent } from './subAdmin/eventos/gestor-eventos/gestor-eventos.component';
 import { ReportesComponent } from './subAdmin/reportes/reportes.component';
+import { CarritoComprasComponent } from './subProductsCom/carrito-compras/carrito-compras.component';
+import { IniSesionProductComponent } from './subProductsCom/ini-sesion-product/ini-sesion-product.component';
+import { RegistroProComponent } from './subProductsCom/registro-pro/registro-pro.component';
+import { DataTablesModule} from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -44,11 +51,21 @@ import { ReportesComponent } from './subAdmin/reportes/reportes.component';
     CrearAlbumComponent,
     EliminarAlbumComponent,
     GestorEventosComponent,
-    ReportesComponent
+    ReportesComponent,
+    ConfirmEqualsValidatorDirective,
+    CarritoComprasComponent,
+    IniSesionProductComponent,
+    RegistroProComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FullCalendarModule,
+    DataTablesModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

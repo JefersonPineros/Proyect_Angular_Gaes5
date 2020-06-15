@@ -1,19 +1,32 @@
 nav {
-    align-items: center;
     background: rgb(1,0,6);
-    background: linear-gradient(143deg, rgba(1,0,6,1) 28%, rgba(121,9,9,1) 51%, rgba(162,52,8,1) 80%);
+    background: linear-gradient(143deg, rgba(162,52,8,1) 28%, rgba(121,9,9,1) 51%, rgba(1,0,6,1) 80%);
 }
-.navbar-brand img{
-    width: 120px;
-    height: auto;
-}
+@font-face{
+    font-family: Abstract classic font;
+    src: url(../../assets/fuentes/AbstractClassicFont.ttf);
+}   
 nav .nav-link{
     color: white !important;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    font-size: 19px;
     font-style: oblique;
 }
 nav .nav-item :hover{
-    background: rgb(1,0,6);
+    border-radius: 5px;
+    color: white;
     background: linear-gradient(143deg, rgba(1,0,6,1) 28%, rgba(171,61,22,1) 67%);
+}
+.custom-toggler.navbar-toggler { 
+    border-color: lightgreen; 
+} 
+/* .cerrarSesion{
+    color: white;
+    font-size: 14px;
+}
+.cerrarSesion :hover{
+    color: white;
+} */
+.navbar-toggler-icon{
+    color: white;
 }
