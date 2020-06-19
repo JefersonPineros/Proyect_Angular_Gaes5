@@ -24,6 +24,7 @@
     "@fullcalendar/daygrid": "^4.4.0",
     "@sweetalert2/ngx-sweetalert2": "^8.1.0",
     "@types/js-cookie": "^2.2.6",
+    "alertifyjs": "^1.13.1",
     "angular-datatables": "^9.0.2",
     "bootstrap": "^4.4.1",
     "canvasjs": "^1.8.3",

@@ -83,10 +83,11 @@ export class SesionComponent implements OnInit {
       icon: 'success',
       title: 'Usuario almacenado correctamente',
       text: '¡Muchas gracias!, ahora inicia sesion. ',
+      onClose:() =>{
+        location.reload();
+      }  
     })
-
     console.log(this.newUser);
-
   }
     
   
