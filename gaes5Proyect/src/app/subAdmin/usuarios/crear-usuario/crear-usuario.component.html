@@ -4,25 +4,26 @@
             Crear usuario
         </h4>
     </div>
+    <hr>
     <form #crearUsuarioForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="primerNombre">Primer Nombre</label>
+                <label for="primerNombre">Nombres</label>
                 <input type="text" class="form-control" id="primerNombre"
                 name="firstName" #firstName="ngModel" [(ngModel)]="crearUsuarioAdmin.firstName"
                 pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"
                 [style.border]="firstName.touched && !firstName.valid?'solid red 1px':firstName.touched && firstName.valid?'solid green 1px':!firstName.touched?'solid grey 1px':''"
-                placeholder="Primer nombre *" required>
+                placeholder="Nombres" required>
                 <span class="validForm" *ngIf="firstName.touched && firstName.valid">Correcto</span>
                 <span class="errorForm" *ngIf="firstName.touched && !firstName.valid">No ha ingresado un dato valido</span>
             </div>
             <div class="form-group col-md-6">
-                <label for="segundoNombre">Segundo nombre</label>
+                <label for="segundoNombre">Apellidos</label>
                 <input type="text" class="form-control" id="segundoNombre" 
                 name="lastName" #lastName="ngModel" [(ngModel)]="crearUsuarioAdmin.lastName"
                 pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}"
                 [style.border]="lastName.touched && !lastName.valid?'solid red 1px':lastName.touched && lastName.valid?'solid green 1px':!lastName.touched?'solid grey 1px':''"
-                placeholder="Segundo nombre" required>
+                placeholder="Apellidos" required>
                 <span class="validForm" *ngIf="lastName.touched && lastName.valid">Correcto</span>
                 <span class="errorForm" *ngIf="lastName.touched && !lastName.valid">No ha ingresado un dato valido</span>
             </div>

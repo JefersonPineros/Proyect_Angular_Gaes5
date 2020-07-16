@@ -29,6 +29,8 @@ import { CarritoComprasComponent } from './subProductsCom/carrito-compras/carrit
 import { IniSesionProductComponent } from './subProductsCom/ini-sesion-product/ini-sesion-product.component';
 import { RegistroProComponent } from './subProductsCom/registro-pro/registro-pro.component';
 import { DataTablesModule} from 'angular-datatables';
+import { UpdateUsuarioComponent } from './subAdmin/usuarios/update-usuario/update-usuario.component';
+import { ActualizarProductosComponent } from './subAdmin/productos/actualizar-productos/actualizar-productos.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { DataTablesModule} from 'angular-datatables';
     ConfirmEqualsValidatorDirective,
     CarritoComprasComponent,
     IniSesionProductComponent,
-    RegistroProComponent
+    RegistroProComponent,
+    UpdateUsuarioComponent,
+    ActualizarProductosComponent
     
   ],
   imports: [

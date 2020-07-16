@@ -17,3 +17,6 @@ tbody tr td{
     overflow: hidden;
     max-width: 65px;
 }
+.buttonMar{
+    margin-left: 15px;
+}
