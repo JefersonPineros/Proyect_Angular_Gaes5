@@ -87,7 +87,7 @@
                         <span class="validForm" *ngIf="contactProvider.touched && contactProvider.valid">Correcto</span>
                         <span class="errorForm" *ngIf="contactProvider.touched && !contactProvider.valid">El campo está vacío o no es valido.</span>
                     </div>
-                    <button type="submit" [disabled]="!formProducts.form.valid" class="btn  btn-outline-dark btn-block">Crear producto</button>
+                    <button type="submit" [disabled]="!formProducts.form.valid" class="btn  btn-outline-danger btn-block">Crear producto</button>
                 </div>
             </form>
         </div>

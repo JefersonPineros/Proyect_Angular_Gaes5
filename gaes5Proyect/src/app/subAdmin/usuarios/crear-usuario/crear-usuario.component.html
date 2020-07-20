@@ -76,7 +76,7 @@
                 <span class="errorForm" *ngIf="confirmPass.touched && confirmPass.errors?.required">Ingrese una contraseña.</span>
                 <span class="errorForm" *ngIf="confirmPass.errors?.notEquals && confirmPass.touched && !confirmPass.errors?.required">Las contraseñas deben ser iguales</span>
             </div>
-            <button type="submit" [disabled]="!crearUsuarioForm.form.valid" class="btn  btn-outline-dark btn-block">Crear usuario</button>
+            <button type="submit" [disabled]="!crearUsuarioForm.form.valid" class="btn  btn-outline-danger btn-block">Crear usuario</button>
         </div>
     </form>
 </div>

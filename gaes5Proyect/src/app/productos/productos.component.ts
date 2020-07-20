@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PedidosCarritoService } from '../services/pedidos-carrito.service'
 
 @Component({
   selector: 'app-productos',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-  
+  public countPedidos: string;
   public listaProductos: Array<any>;
-
-  constructor() {
-    
+  public ProduuctosSeleccionados: Array<any>;
+  constructor(private sendProductoServices: PedidosCarritoService) {
+    this.ProduuctosSeleccionados = new Array()
+    this.countPedidos = "0";
     this.listaProductos = [
       { idProducto: 1, nombrePro: "Aguila light", descripcionPro: " Es una cerveza muy refrescante, con un sabor suave y menos porcentaje de alcohol...", valorProdu: 2500, imagen: "../../assets/imagenes/productos/aguilaLight.jpeg" },
       { idProducto: 2, nombrePro: "Poker", descripcionPro: "Está elaborada por la Cervecería Bavaria, sin duda la más importante de Colombia...", valorProdu: 2500, imagen: "../../assets/imagenes/productos/poker.jpg" },
@@ -28,5 +30,34 @@ export class ProductosComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  agregarProducto(idPro: string) {
+    let idPr: string = idPro;
+    let contador: number = parseInt(this.countPedidos);
 
+    if (this.ProduuctosSeleccionados.length > 0) {
+      if(this.ProduuctosSeleccionados.find(x => x.idProducto == idPr)){
+        console.log("Producto ya seleccionado");
+      }else{
+        for(let x = 0; x < this.listaProductos.length; x ++){
+          if (this.listaProductos[x].idProducto == idPr) {
+            contador = contador + 1;
+            this.countPedidos = contador.toString();
+            this.ProduuctosSeleccionados.push(this.listaProductos[x]);
+            console.log(this.ProduuctosSeleccionados);
+          }
+        }
+      }
+    } else {
+      for (let i = 0; i < this.listaProductos.length; i++) {
+        if (this.listaProductos[i].idProducto == idPr) {
+          contador = contador + 1;
+          this.countPedidos = contador.toString();
+          this.ProduuctosSeleccionados.push(this.listaProductos[i]);
+        }
+      }
+    }
+  }
+  sendProductos() {
+    this.sendProductoServices.sendProducto(this.ProduuctosSeleccionados);
+  }
 }

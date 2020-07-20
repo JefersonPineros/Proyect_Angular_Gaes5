@@ -13,30 +13,71 @@ export class ReportesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let chart2 = new CanvasJS.Chart("chartContainer2", {
+      theme: "light2",
+      animationEnabled: true,
+      exportEnabled: true,
+      title:{
+        text: "Pedidos por semana"
+      },
+      data: [{
+        type: "pie",
+        showInLegend: true,
+        toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+        indexLabel: "{name} - #percent%",
+        dataPoints: [
+          { y: 120, name: "Primera semana" },
+          { y: 300, name: "Segunda Semana" },
+          { y: 800, name: "Tercera Semana" },
+          { y: 150, name: "Cuarta Semana" }
+        ]
+      }]
+    });
     let chart = new CanvasJS.Chart("chartContainer", {
       animationEnabled: true,
       exportEnabled: true,
       title: {
-        text: "Basic Column Chart in Angular"
+        text: "Productos vendidos mes julio"
       },
       data: [{
         type: "column",
         dataPoints: [
-          { y: 71, label: "Apple" },
-          { y: 55, label: "Mango" },
-          { y: 50, label: "Orange" },
-          { y: 65, label: "Banana" },
-          { y: 95, label: "Pineapple" },
-          { y: 68, label: "Pears" },
-          { y: 28, label: "Grapes" },
-          { y: 34, label: "Lychee" },
-          { y: 14, label: "Jackfruit" }
+          { y: 71, label: "Cervezas" },
+          { y: 55, label: "Cocteles" },
+          { y: 50, label: "Whyskys" },
+          { y: 65, label: "Comidas" },
+          { y: 95, label: "Aguardientes" }
         ]
       }]
-    });
+    }
+    
+    );
+    let dataPoints = [];
+	let y = 0;		
+	for ( var i = 0; i < 5000; i++ ) {		  
+		y += Math.round(5 + Math.random() * (-5 - 5));	
+		dataPoints.push({ y: y});
+	}
+	let chart3 = new CanvasJS.Chart("chartContainer3", {
+		zoomEnabled: true,
+		animationEnabled: true,
+		exportEnabled: true,
+		title: {
+      text: "Crecimiento en ventas"
+		},
+		subtitles:[{
+			text: ""
+		}],
+		data: [
+		{
+			type: "line",                
+			dataPoints: dataPoints
+		}]
+	});
       
     chart.render();
-  
+    chart2.render();
+    chart3.render();
   }
 
 }
